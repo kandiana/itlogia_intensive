@@ -1,0 +1,245 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.button {
+  width: 100%;
+  padding: 20px;
+  background: #030305;
+  border: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: white;
+  transition: background-color .5s;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #575757;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: #343434;
+  color: gray;
+  cursor: not-allowed;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 25px 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  vertical-align: bottom;
+}
+
+.menu {
+  margin-left: 244px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 115px;
+}
+
+.menu-item a {
+  font-size: 15px;
+  color: #030305;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  border-bottom: 2px solid black;
+}
+
+.main {
+  background-image: url("../assets/images/background.png");
+  background-position: center;
+  background-size: cover;
+  padding: 104px 0 154px;
+}
+
+.main-info {
+  max-width: 855px;
+}
+
+.main-title {
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 1.1;
+  color: #030305;
+  margin-bottom: 40px;
+}
+
+.main-text {
+  max-width: 502px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #030305;
+  margin-bottom: 40px;
+}
+
+.main-action button {
+  width: 334px;
+  height: 64px;
+}
+
+.car {
+  padding: 100px 0;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+  color: #030305;
+}
+
+.car-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car-item {
+  max-width: 384px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.car-item-image img {
+  vertical-align: bottom;
+  transition: all .3s;
+}
+
+.car-item-image:hover img {
+  transform: scale(1.1);
+}
+
+.car-item-title {
+  padding: 15px 0 17px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #030305;
+}
+
+.car-item-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-item-point {
+  width: 110px;
+  height: 92px;
+  margin: 0 calc(15px/2);
+
+}
+
+.car-item-point img {
+  margin-bottom: 11px;
+}
+
+.car-item-point p:first-of-type {
+  font-weight: bold;
+}
+
+.car-item-action {
+  margin-top: 13px;
+}
+
+.car-item-action .button {
+  height: 54px;
+  padding: 15px;
+}
+
+.price {
+  overflow: hidden;
+}
+
+.price .container {
+  position: relative;
+  padding-bottom: 121px;
+}
+
+.price .sub-title {
+  margin-bottom: 20px;
+}
+
+.price-text {
+  margin-bottom: 60px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #5D5D5F;
+}
+
+.price-form {
+  max-width: 344px;
+}
+
+.price-input {
+  padding: 22px 18px;
+  margin-bottom: 15px;
+  width: 344px;
+  height: 65px;
+  border: 1px solid #5D5D5F;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: black;
+  outline: none;
+}
+
+.price-input::placeholder {
+  color: #5D5D5F;
+}
+
+.price-input.ng-touched.ng-valid {
+  border-color: #5D5D5F;
+}
+
+.price-input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.price-image {
+  position: absolute;
+  left: 401px;
+  bottom: 0;
+}
+
+.footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 25px 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rights {
+  font-size: 15px;
+  color: #030305;
+}
+
+
+
+
+
