@@ -1,5 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
+import {AppService} from "./app.service";
 
 interface carData {
   image: string;
@@ -21,53 +22,14 @@ export class AppComponent {
     car: ['', Validators.required]
   });
 
-  carsData: carData[] = [
-    {
-      image: '1.png',
-      name: 'Lamborghini Huracan Spyder',
-      gear: 'Полный',
-      engine: 5.2,
-      places: 2
-    },
-    {
-      image: '2.png',
-      name: 'Chevrolet Corvette',
-      gear: 'Полный',
-      engine: 6.2,
-      places: 2
-    },
-    {
-      image: '3.png',
-      name: 'Ferrari California',
-      gear: 'Полный',
-      engine: 3.9,
-      places: 4
-    },
-    {
-      image: '4.png',
-      name: 'Lamborghini Urus',
-      gear: 'Полный',
-      engine: 4.0,
-      places: 5
-    },
-    {
-      image: '5.png',
-      name: 'Audi R8',
-      gear: 'Полный',
-      engine: 5.2,
-      places: 2
-    },
-    {
-      image: '2.png',
-      name: 'Аренда Chevrolet Camaro',
-      gear: 'Полный',
-      engine: 2.0,
-      places: 4
-    },
-  ]
+  carsData: any = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private appService: AppService) {
   };
+
+  ngOnInit() {
+    this.appService.getData().subscribe(carsData => this.carsData = carsData);
+  }
 
   goScroll(target: HTMLElement, car?: carData) {
     target.scrollIntoView({behavior: "smooth"});
@@ -77,12 +39,14 @@ export class AppComponent {
   };
 
   trans: any;
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
     this.trans = {transform: 'translate3d(' + ((e.clientX * 0.3) / 8) + 'px,' + ((e.clientY * 0.3) / 8) + 'px,0px)'};
   }
 
   bgPos: any;
+
   @HostListener('document:scroll', ['$event'])
   onScroll() {
     this.bgPos = {backgroundPositionX: 'calc(50% + ' + (0.3 * window.scrollY) + 'px)'};
@@ -90,8 +54,16 @@ export class AppComponent {
 
   onSubmit() {
     if (this.priceForm.valid) {
-      alert('Cпасибо за заявку, мы свяжемся с Вами в ближайшее время');
-      this.priceForm.reset();
+      this.appService.sendQuery(this.priceForm.value)
+        .subscribe({
+          next: (response: any) => {
+            alert(response.message);
+            this.priceForm.reset();
+          },
+          error: (response: any) => {
+            alert(response.error.message);
+          },
+        });
     }
   };
 }

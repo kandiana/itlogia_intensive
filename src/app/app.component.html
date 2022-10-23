@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container">
     <div class="logo">
-      <img src="../assets/images/logo.png" alt="Logo">
+      <img src="assets/images/logo.png" alt="Logo">
     </div>
     <nav class="menu">
       <ul>
@@ -40,22 +40,22 @@
       <div class="car-items">
         <div class="car-item" *ngFor="let car of carsData">
           <div class="car-item-image">
-            <img src="../assets/images/cars/{{car.image}}" alt="{{car.name}}">
+            <img src="{{car.image}}" alt="{{car.name}}">
           </div>
           <p class="car-item-title">{{car.name}}</p>
           <div class="car-item-info">
             <div class="car-item-point">
-              <img src="../assets/images/gear.png" alt="Gear">
+              <img src="assets/images/gear.png" alt="Gear">
               <p>Привод</p>
               <p>{{car.gear}}</p>
             </div>
             <div class="car-item-point">
-              <img src="../assets/images/wheel.png" alt="Wheel">
+              <img src="assets/images/wheel.png" alt="Wheel">
               <p>Двигатель</p>
               <p>{{car.engine}} л.с.</p>
             </div>
             <div class="car-item-point">
-              <img src="../assets/images/belt.png" alt="Belt">
+              <img src="assets/images/belt.png" alt="Belt">
               <p>Кол-во мест</p>
               <p>{{car.places}}</p>
             </div>
@@ -78,7 +78,7 @@
         <input type="text" class="price-input" id="car" placeholder="Автомобиль, который вас интересует" formControlName="car">
         <button class="button" id="price-action" type="button" (click)="onSubmit()" [disabled]="!priceForm.valid">Узнать цену</button>
       </form>
-      <img src="../assets/images/rolls.png" alt="Rolls" class="price-image" [ngStyle]="trans">
+      <img src="assets/images/rolls.png" alt="Rolls" class="price-image" [ngStyle]="trans">
     </div>
   </section>
 </main>
@@ -86,7 +86,7 @@
 <footer class="footer">
   <div class="container">
     <div class="logo">
-      <img src="../assets/images/logo.png" alt="Logo">
+      <img src="assets/images/logo.png" alt="Logo">
     </div>
     <p class="rights">Все права защищены</p>
   </div>
